@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ok_listo - Webs Express para Profesionales</title>
+    <meta name="description" content="Diseños web ultrarrápidos + identidad gráfica para profesionales que quieren herramientas para lograr sus objetivos">
+    
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Estilos -->
+    <style>
+        :root {
+            --primary: #1F2937;     /* Header y footer */
+            --primary-light: #374151;
+            --secondary: #10B981;
+            --light: #F9FAFB;
+            --gray: #6B7280;
+            --light-gray: #E5E7EB;
+            --accent: #F59E0B;
+            --border-radius: 12px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #111827;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            color: var(--gray);
+            font-size: 1.125rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 1.125rem;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary);
+            color: white;
+            box-shadow: var(--box-shadow);
+        }
+
+        .btn-primary:hover {
+            background-color: #0da271;
+            transform: translateY(-2px);
+        }
+
+        .btn-lg {
+            padding: 1.25rem 2.5rem;
+            font-size: 1.25rem;
+        }
+
+        /* Header Styles */
+        header {
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            background-color: var(--primary);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Source Code Pro', monospace;
+            font-size: 1.75rem;
+            font-weight: 400; /* Regular en vez de bold */
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-transform: lowercase; /* Todo en minúscula */
+        }
+
+        .logo-icon {
+            width: 28px;
+            height: 28px;
+            fill: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: var(--transition);
+            opacity: 0.9;
+            font-size: 1.05rem;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+            color: var(--secondary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: white;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: var(--primary);
+            padding: 2rem;
+            z-index: 99;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 1rem 0;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 7rem 0 5rem;
+            background: linear-gradient(to bottom, #ffffff, #f0f7ff);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(31, 41, 55, 0.08) 0%, rgba(31, 41, 55, 0) 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-text h1 {
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: var(--gray);
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .device-mockup {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border: 12px solid #1F2937;
+        }
+
+        .stats-container {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--gray);
+        }
+
+        /* Problem Solution Section */
+        .problem-solution {
+            background-color: var(--light);
+        }
+
+        .ps-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .problem-card, .solution-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--box-shadow);
+            height: 100%;
+        }
+
+        .problem-card {
+            border-top: 4px solid #EF4444;
+        }
+
+        .solution-card {
+            border-top: 4px solid var(--secondary);
+        }
+
+        .problem-list, .solution-list {
+            list-style: none;
+        }
+
+        .problem-list li, .solution-list li {
+            padding: 0.75rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .problem-list li::before {
+            content: "✗";
+            color: #EF4444;
+            font-weight: bold;
+        }
+
+        .solution-list li::before {
+            content: "✓";
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            text-align: center;
+            border-top: 4px solid var(--primary);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Process Section */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            counter-reset: step-counter;
+        }
+
+        .process-step {
+            position: relative;
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            padding-top: 5rem;
+        }
+
+        .process-step::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--light);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+            position: relative;
+            border-left: 4px solid var(--primary);
+        }
+
+        .testimonial-card::before {
+            content: """;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 5rem;
+            color: var(--light-gray);
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            margin-right: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .author-info h4 {
+            margin-bottom: 0.25rem;
+        }
+
+        .author-title {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Pricing */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2.5rem 2rem;
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--light-gray);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 2rem;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .pricing-header {
+            margin-bottom: 2rem;
+        }
+
+        .pricing-name {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-price span {
+            font-size: 1rem;
+            color: var(--gray);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 0.75rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-features li i {
+            color: var(--secondary);
+        }
+
+        /* Guarantee Section */
+        .guarantee-section {
+            background-color: #f0f7ff;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .guarantee-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(to right, var(--primary), var(--primary-light));
+            color: white;
+            text-align: center;
+            padding: 5rem 0;
+        }
+
+        .cta h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.25rem;
+        }
+
+        .btn-light {
+            background-color: white;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .btn-light:hover {
+            background-color: var(--light);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-about .logo {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-about p {
+            color: #D1D5DB;
+        }
+
+        .footer-links h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: #D1D5DB;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #9CA3AF;
+            font-size: 0.85rem; /* Texto más pequeño */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-content, .ps-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid, .pricing-grid, .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hero-text {
+                text-align: center;
+                margin: 0 auto;
+            }
+            
+            .stats-container {
+                justify-content: center;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .services-grid, .process-steps, .pricing-grid, .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                padding: 5rem 0 3rem;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <!-- SVG del rayo (reemplazar con tu archivo iconray.svg) -->
+                <svg class="logo-icon" viewBox="0 0 24 24" xmlns="/">
+                    <img src="assets/img/iconray.svg" alt="Logo" class="logo-icon">                </svg>
+                ok_listo
+            </a>
+            <nav class="nav-links">
+                <a href="#servicios">Servicios</a>
+                <a href="#proceso">Proceso</a>
+                <a href="#testimonios">Casos de Éxito</a>
+                <a href="#precios">Planes</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#servicios">Servicios</a>
+            <a href="#proceso">Proceso</a>
+            <a href="#testimonios">Casos de Éxito</a>
+            <a href="#precios">Planes</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+    </header>
+
+    <!-- Resto del código... (igual que antes) -->
+<!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Tu web profesional lista en 72 horas</h1>
+                <p>Diseños web ultrarrápidos + identidad gráfica para profesionales que quieren herramientas para lograr sus objetivos.</p>
+                <a href="https://wa.me/5491140297739?text=Hola%20OK_listo,%20quiero%20mi%20web%20express" class="btn btn-primary btn-lg">
+                    <i class="fab fa-whatsapp"></i> Reservar mi web express
+                </a>
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <span class="stat-value">72h</span>
+                        <span class="stat-label">Tiempo de entrega</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">120+</span>
+                        <span class="stat-label">Clientes satisfechos</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">98%</span>
+                        <span class="stat-label">Tasa de satisfacción</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-container">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Web profesional para profesionales" class="device-mockup">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem/Solution Section -->
+    <section class="problem-solution">
+        <div class="container">
+            <h2>¿Tu web está vacía? Tu web puede resolverlo</h2>
+            <div class="ps-container">
+                <div class="problem-card">
+                    <h3>Los problemas comunes</h3>
+                    <ul class="problem-list">
+                        <li>Páginas lentas ahuyentan nuevos contactos</li>
+                        <li>Diseños genéricos que no transmiten profesionalismo</li>
+                        <li>Cero integración con WhatsApp/Calendly</li>
+                        <li>Invisibilidad en Google para tu especialidad</li>
+                        <li>Falta de identidad visual profesional</li>
+                        <li>Agenda vacía pese a tener experiencia</li>
+                    </ul>
+                </div>
+                <div class="solution-card">
+                    <h3>Nuestra solución</h3>
+                    <ul class="solution-list">
+                        <li>Webs específicas que convierten visitantes en turnos</li>
+                        <li>Diseños personalizados para tu especialidad</li>
+                        <li>Integración completa con WhatsApp y sistemas de reservas</li>
+                        <li>SEO local para que te encuentren en búsquedas cercanas</li>
+                        <li>Identidad visual profesional que genera confianza</li>
+                        <li>Agenda profesional nutrida</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <h2>Servicios Profesionales</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Diseño Web Express</h3>
+                    <p>Landing page mobile-first que carga en menos de 1 segundo + formulario WhatsApp integrado para captar contactos al instante.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Identidad Gráfica</h3>
+                    <p>Logo profesional + paleta de colores + sistema visual que genera confianza inmediata en tus clientes potenciales.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Turnos Automáticos</h3>
+                    <p>Sistema de reservas conectado a tu Google Calendar que permite a tus clientes agendar turnos 24/7 sin comisiones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process" id="proceso">
+        <div class="container">
+            <h2>Proceso Express en 3 Pasos</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <h3>Briefing Express</h3>
+                    <p>Cuéntanos tus objetivos en 5 minutos vía WhatsApp. Sin formularios largos ni papeleo.</p>
+                </div>
+                <div class="process-step">
+                    <h3>Diseño en Tiempo Récord</h3>
+                    <p>Recibe tu web profesional en 72 horas con todos los elementos necesarios para comenzar a captar clientes.</p>
+                </div>
+                <div class="process-step">
+                    <h3>Resultados en 24 Horas</h3>
+                    <p>Publicamos y ajustamos para que recibas tus primeros contactos en menos de 24 horas después de la entrega.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonios">
+        <div class="container">
+            <h2>Casos de Éxito Reales</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>"De 5 a 22 contactos mensuales con una web que se pagó sola en 2 semanas. La inversión más rentable que hice en mi negocio."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">VM</div>
+                        <div class="author-info">
+                            <h4>Valeria Martínez</h4>
+                            <div class="author-title">Consultora - Córdoba</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Ahora mis clientes reservan online a las 3 AM mientras mi competencia duerme. Mi agenda está llena con clientes ideales."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MT</div>
+                        <div class="author-info">
+                            <h4>Marcos Torres</h4>
+                            <div class="author-title">Coach - Rosario</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Finalmente tengo una web que refleja mi nivel de especialización. Recibo consultas de clientes que valoran mi expertise."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">LC</div>
+                        <div class="author-info">
+                            <h4>Lucía Cabrera</h4>
+                            <div class="author-title">Asesora - Buenos Aires</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"La integración con WhatsApp ha sido revolucionaria. Respondo consultas mientras trabajo, sin perder oportunidades."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DR</div>
+                        <div class="author-info">
+                            <h4>Diego Rodríguez</h4>
+                            <div class="author-title">Consultor - Mendoza</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="precios">
+        <div class="container">
+            <h2>Planes a Medida</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-name">Básico</h3>
+                        <div class="pricing-price">$350.000 <span>+IVA</span></div>
+                        <p>Ideal para profesionales que inician</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle"></i> Landing page profesional</li>
+                        <li><i class="fas fa-check-circle"></i> Diseño responsive (móvil y desktop)</li>
+                        <li><i class="fas fa-check-circle"></i> Formulario de contacto WhatsApp</li>
+                        <li><i class="fas fa-check-circle"></i> SEO básico local</li>
+                        <li><i class="fas fa-check-circle"></i> Optimización de velocidad</li>
+                        <li><i class="fas fa-check-circle"></i> Entrega en 5 días</li>
+                    </ul>
+                    <a href="https://wa.me/5491140297739?text=Me%20interesa%20el%20plan%20Básico" class="btn btn-primary">Solicitar</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="popular-badge">POPULAR</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-name">Profesional</h3>
+                        <div class="pricing-price">$580.000 <span>+IVA</span></div>
+                        <p>Perfecto para profesionales establecidos</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle"></i> Todo en Básico +</li>
+                        <li><i class="fas fa-check-circle"></i> Sistema de reservas online</li>
+                        <li><i class="fas fa-check-circle"></i> Blog integrado (hasta 3 artículos)</li>
+                        <li><i class="fas fa-check-circle"></i> SEO avanzado local</li>
+                        <li><i class="fas fa-check-circle"></i> Galería de trabajos</li>
+                        <li><i class="fas fa-check-circle"></i> Identidad gráfica básica</li>
+                        <li><i class="fas fa-check-circle"></i> Entrega en 72 horas</li>
+                    </ul>
+                    <a href="https://wa.me/5491140297739?text=Me%20interesa%20el%20plan%20Profesional" class="btn btn-primary">Solicitar</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-name">Premium</h3>
+                        <div class="pricing-price">$780.000 <span>+IVA</span></div>
+                        <p>Para profesionales de alto nivel</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle"></i> Todo en Profesional +</li>
+                        <li><i class="fas fa-check-circle"></i> Identidad gráfica completa</li>
+                        <li><i class="fas fa-check-circle"></i> Sistema de testimonios</li>
+                        <li><i class="fas fa-check-circle"></i> Integración con redes sociales</li>
+                        <li><i class="fas fa-check-circle"></i> Galería antes/después</li>
+                        <li><i class="fas fa-check-circle"></i> Videos explicativos (2)</li>
+                        <li><i class="fas fa-check-circle"></i> Entrega en 48 horas</li>
+                    </ul>
+                    <a href="https://wa.me/5491140297739?text=Me%20interesa%20el%20plan%20Premium" class="btn btn-primary">Solicitar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee-section">
+        <div class="container">
+            <div class="guarantee-content">
+                <h3>Garantía de resultados</h3>
+                <p style="font-size: 1.25rem;">Si no recibes al menos 3 consultas de clientes en la primera semana después de lanzar tu web, trabajaremos sin costo adicional para optimizarla hasta que obtengas resultados.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contacto">
+        <div class="container">
+            <h2>¿Listo para llenar tu agenda?</h2>
+            <p>Último paso: Responde 3 preguntas por WhatsApp y recibe tu presupuesto personalizado en 10 minutos.</p>
+            <a href="https://wa.me/5491140297739?text=Hola%20OK_listo,%20quiero%20mi%20web%20profesional.%20Mi%20especialidad%20es:%20[tu%20especialidad]" class="btn btn-light btn-lg">
+                <i class="fab fa-whatsapp"></i> Comenzar ahora (es gratis)
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="#" class="logo">
+                        <svg class="logo-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 10h7l-10 14v-8H4l6-10v4l3-4z" fill="currentColor"/>
+                        </svg>
+                        ok_listo
+                    </a>
+                    <p>Diseño web express e identidad gráfica para profesionales que quieren destacar y llenar su agenda de clientes.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/5491140297739"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="#">Diseño Web Express</a></li>
+                        <li><a href="#">Identidad Gráfica</a></li>
+                        <li><a href="#">Sistemas de Reservas</a></li>
+                        <li><a href="#">SEO para Profesionales</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#proceso">Proceso</a></li>
+                        <li><a href="#testimonios">Casos de Éxito</a></li>
+                        <li><a href="#precios">Planes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> gusbunsow@gmail.com</li>
+                        <li><i class="fab fa-whatsapp"></i> +54 9 11 4029-7739</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Buenos Aires, Argentina</li>
+                        <li>
+                            <a href="https://maps.app.goo.gl/EZEipYnTmuyCByft7" target="_blank" style="color: #D1D5DB;">
+                                <i class="fas fa-map-marked-alt"></i> Ver ubicación
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 ok_listo. Todos los derechos reservados. Buenos Aires, Argentina.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
