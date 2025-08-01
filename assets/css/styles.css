@@ -651,10 +651,8 @@ footer {
     z-index: 1000;
     transition: all 0.3s ease;
     animation: pulse 2s infinite;
-    /* Nuevas propiedades para eliminar líneas */
-    outline: none !important;
-    box-shadow: none !important;
-    border: none !important;
+    text-decoration: none;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Social Links */
@@ -668,10 +666,7 @@ footer {
     background-color: rgba(255, 255, 255, 0.1);
     color: white;
     transition: var(--transition);
-    /* Nuevas propiedades para eliminar líneas */
-    outline: none !important;
-    box-shadow: none !important;
-    border: none !important;
+    text-decoration: none;
 }  
 .whatsapp-float:hover {
     background-color: #128C7E;
