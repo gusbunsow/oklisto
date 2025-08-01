@@ -719,8 +719,9 @@
         <div class="container header-container">
             <a href="#" class="logo">
                 <!-- SVG del rayo (reemplazar con tu archivo iconray.svg) -->
-                <svg class="logo-icon" viewBox="0 0 24 24" xmlns="/">
-                    <img src="assets/img/iconray.svg" alt="Logo" class="logo-icon">                </svg>
+                <svg class="logo-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 10h7l-10 14v-8H4l6-10v4l3-4z" fill="currentColor"/>
+                </svg>
                 ok_listo
             </a>
             <nav class="nav-links">
@@ -1032,12 +1033,11 @@
                         <li><i class="fab fa-whatsapp"></i> +54 9 11 4029-7739</li>
                         <li><i class="fas fa-map-marker-alt"></i> Buenos Aires, Argentina</li>
                         <li>
-                            <li>
-                                <i class="fas fa-envelope"></i>
-                                <a href="mailto:gusbunsow@gmail.com" style="color: #D1D5DB;">gusbunsow@gmail.com</a>
-                            </li>
-                                <i class="fas fa-map-marked-alt"></i> Ver ubicación
-                            </a>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:gusbunsow@gmail.com" style="color: #D1D5DB;">gusbunsow@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marked-alt"></i> Ver ubicación
                         </li>
                     </ul>
                 </div>
@@ -1045,7 +1045,6 @@
             <div class="copyright">
                 &copy; 2025 ok_listo. Todos los derechos reservados. Buenos Aires, Argentina.
             </div>
-        </div>
         </div>
     </footer>
 <!-- Solo pega esto ANTES del cierre de </body> -->
@@ -1094,7 +1093,7 @@
         class="whatsapp-icon">
 </a>
     <script>
-        // Mobile menu toggle funcionalitty
+        // Mobile menu toggle functionality
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const mobileMenu = document.getElementById('mobileMenu');
         
