@@ -1046,55 +1046,55 @@
                 &copy; 2025 ok_listo. Todos los derechos reservados. Buenos Aires, Argentina.
             </div>
         </div>
-        <!-- Agrega esto ANTES del cierre del </body> (preferiblemente al final del footer) -->
+        </div>
+    </footer>
+<!-- Solo pega esto ANTES del cierre de </body> -->
 <style>
   .whatsapp-float {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
     background-color: #25D366;
-    color: white;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 16px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    z-index: 100;
+    border-radius: 50%;
     display: flex;
     align-items: center;
-    padding: 10px 15px;
-    text-decoration: none;
+    justify-content: center;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
     animation: pulse 2s infinite;
   }
   
   .whatsapp-float:hover {
     background-color: #128C7E;
-    transform: scale(1.05);
+    transform: scale(1.1);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
   }
   
   .whatsapp-icon {
-    width: 30px;
-    margin-right: 8px;
+    width: 38px;
+    height: 38px;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
   }
   
   @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-    70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+    70% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
     100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
   }
 </style>
 
 <a href="https://wa.me/5491140297739?text=Hola%20Gustavo,%20vi%20oklisto%20y%20quiero%20mi%20landing%20profesional" 
    class="whatsapp-float" 
-   target="_blank">
-   <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJ3aGl0ZSIgZD0iTTE3LjQ3MiAxNC4xMDNhNS4yMjQgNS4yMjQgMCAwIDAgMi41NTktMi4zOTVjLjEyOS0uMzA0LjA3OC0uNjYzLS4xMy0uODg4YTIwLjU1OSAyMC41NTkgMCAwIDAtNS40MDMtNC4wMzcgOS45MTcgOS45MTcgMCAwIDAtOS4xMDcuMjg3QzIuMjY3IDcuOTkzLjQ0NCAxMS4xNjcuMTI4IDE0LjQ1OGMtLjM3NSAzLjk1MyAxLjE0IDcuOTU4IDQuMDYyIDEwLjU2bC0xLjY5OSA2LjE0NCA1Ljg2LTEuNTQxYTExLjk2IDExLjk2IDAgMCAwIDUuNjA2IDEuNDQ0aC4wMDJjNi42MTcgMCAxMi01LjM4MyAxMi0xMiAwLTIuODEtLjkyLTUuNDUxLTIuNTI4LTcuNTd6Ii8+PC9zdmc+" 
-        class="whatsapp-icon" 
-        alt="WhatsApp">
-   ¡WhatsApp ahora!
+   target="_blank"
+   aria-label="Contactar por WhatsApp">
+   <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik00LjA2IDQzLjMwNUMzLjA0IDQyLjYyIDIuNCA0MS41IDIuNSA0MC4zN1Y4LjU3QzIuNzMgNy4wNCA0LjA5IDUuOSA1LjYgNS43M0w0MS44LjVDNDMuNi4zNSA0NSAyLjEgNDQuOTggMy45Mkw0NC43IDM5LjE4Yy0uMDQgMS44LTEuNiAzLjI5LTMuNCAzLjM0TDUuNSA0My45Yy0uNTIuMDEtMS4wMy0uMTItMS40NC0uNnoiLz48cGF0aCBmaWxsPSJ3aGl0ZSIgZD0iTTM0Ljg1IDEzLjg4Yy0uNi0uMy0zLjU1LTEuNzItNC4xMi0xLjk0Yy0uNTItuMi0uOS0uMy0xLjI5LjMxYy0uMzguNi0xLjUgMS45LTEuODMgMi4yYy0uMy4zLS42LjQtLjkuMWMtLjYtLjYtMS4xLTEuMTEtMS42LTEuNjZjLS4yNi0uMy0uNTYtLjM1LS44OC0uMWMtMS4wOC44LTIuMTIgMS42LTIuOTUgMi42Yy0uMy4zOS0uMzUuNzUtLjA1IDEuMTVjMS4yIDEuOSAzLjEgMy44IDQuMyA0LjJjLjQuMS44LjEgMS4wOC0uMDljLjU2LS4zNCAxLjctMS4xIDIuMTYtMS43Yy40Ni0uNi42Mi0xLjEuNDctMS43Yy0uMTYtLjYtLjgtMS4xLTEuNjQtMS45Yy0uNTYtLjUtMS4xLS44LTEuNi0xLjFjLS4yLS0uMDUtLjM1LS4xLS41LS4xYy0uMTMtLjAyLS4yOC0uMDEtLjQzLS4wMWMtLjM4IDAtLjk1LjI0LTIuOCAxLjFjLTEuODUuODYtMi4xNSAxLjA0LTIuNDQgMS4wNGMtLjMgMC0uNi0uMTQtLjg1LS4yNWMtLjYzLS4zLTIuMS0uNzYtMy45OS0yLjQyYy0yLjk1LTIuNTUtNC44LTcuMi00LjktNy41Yy0uMS0uMy0uMDYtLjcuMTQtL451YzMuMjUtMy42IDYuOC0zLjIgNy4xLTMuMTljLjMgMCAuNTItLjA0Ljc1LjA0Yy4yMy4wOCAzMy4wNyAxNi42IDMzLjA3IDE2LjZjLjE4LjEuMy4zLjMuNDhjMCAuMTgtLjEuMzctLjMuNDVMMzUuNSAxNC4xOGMtLjIuMTItLjQuMTUtLjYuMTVjLS4yIDAtLjQtLjA1LS41NS0uMTV6Ii8+PC9zdmc+" 
+        class="whatsapp-icon">
 </a>
-    </footer>
-
     <script>
-        // Mobile menu toggle
+        // Mobile menu toggle funcionalitty
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const mobileMenu = document.getElementById('mobileMenu');
         
